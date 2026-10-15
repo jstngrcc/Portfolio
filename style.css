@@ -1,0 +1,145 @@
+:root {
+  --bg: #ffffff;
+  --text: #1f2933;
+  --muted: #52606d;
+  --accent: #2f6fed;
+  --card-bg: #f3f6fb;
+}
+
+body.dark {
+  --bg: #12161c;
+  --text: #e6eaf0;
+  --muted: #a0aab8;
+  --accent: #6ea0ff;
+  --card-bg: #1c222b;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s, color 0.3s;
+}
+
+a { color: var(--accent); }
+
+h1, h2, h3 { line-height: 1.2; }
+
+.site-header {
+  border-bottom: 1px solid var(--card-bg);
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+}
+
+.nav {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.brand {
+  font-weight: bold;
+  font-size: 1.25rem;
+  text-decoration: none;
+  color: var(--text);
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: var(--muted);
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+#theme-toggle {
+  padding: 0.4rem 0.8rem;
+  border: 1px solid var(--accent);
+  border-radius: 6px;
+  background: transparent;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+#theme-toggle:hover {
+  background: var(--accent);
+  color: var(--bg);
+}
+
+main, .site-footer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem 0;
+}
+
+.photo {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.intro {
+  font-size: 1.15rem;
+  color: var(--muted);
+}
+
+.projects { padding: 2rem 0 3rem; }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 1.25rem;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.card:hover { transform: translateY(-4px); }
+
+.site-footer {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  border-top: 1px solid var(--card-bg);
+}
+
+.copy { color: var(--muted); font-size: 0.9rem; }
+
+@media (max-width: 700px) {
+  .nav { flex-wrap: wrap; justify-content: center; }
+
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cards { grid-template-columns: 1fr; }
+}
